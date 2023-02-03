@@ -1,1 +1,1 @@
-QR code generator and scanner using the ZXing library
+QR code generator and scanner using ZXing library
