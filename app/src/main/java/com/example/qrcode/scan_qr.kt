@@ -1,5 +1,8 @@
 package com.example.qrcode
 
+import android.content.Context
+import android.content.SharedPreferences
+import android.graphics.drawable.GradientDrawable.Orientation
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -16,8 +19,15 @@ class scan_qr : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.scan_qr)
 
+        val sharedPreferences=getSharedPreferences("KEY_DISABLE_AUTO_ORIENTATION", Context.MODE_PRIVATE)
+        val editor=sharedPreferences.edit()
+
         val btnscan=findViewById<Button>(R.id.button)
         btnscan.setOnClickListener {
+            editor.apply {
+                putBoolean("KEY_DISABLE_AUTO_ORIENTATION", true)
+                apply()
+            }
             scanQR()
         }
     }
@@ -50,7 +60,6 @@ class scan_qr : AppCompatActivity() {
 
 
 class CaptureAct: CaptureActivity(){
-
 }
 
 

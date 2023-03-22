@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.qrcode"
-        minSdk 21
+        minSdk 22
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -33,6 +33,12 @@ android {
 }
 repositories {
     mavenCentral()
+    google()
+}
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 }
 
 dependencies {
@@ -45,4 +51,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+
+    implementation 'com.github.appsfeature:otp-view:1.0'
+    implementation 'com.github.rajputmukesh748:MukeshOtpView:1.0.0'
+    implementation 'com.github.mukeshsolanki:android-otpview-pinview:3.0.0'
+    implementation 'com.github.pdrozz:pinview:1.0.3'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'com.google.android.material:material:1.5.0'
 }

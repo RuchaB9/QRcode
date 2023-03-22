@@ -14,15 +14,15 @@ import com.google.zxing.qrcode.QRCodeWriter
 
 class generate_qr : AppCompatActivity() {
 
-    private lateinit var QRcode : ImageView
+    private lateinit var qRcode : ImageView
     private lateinit var getData: EditText
     private lateinit var btngetQRcode : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_generate_qr)
 
-        QRcode=findViewById(R.id.QRcode)
+        qRcode=findViewById(R.id.QRcode)
         getData=findViewById(R.id.getData)
         btngetQRcode=findViewById(R.id.generateQRcode)
 
@@ -45,7 +45,7 @@ class generate_qr : AppCompatActivity() {
                             bmp.setPixel(x,y, if(bitMatrix[x,y]) Color.BLACK else Color.WHITE)
                         }
                     }
-                    QRcode.setImageBitmap(bmp)
+                    qRcode.setImageBitmap(bmp)
                 } catch(e: WriterException) {
                     e.printStackTrace()
                 }
